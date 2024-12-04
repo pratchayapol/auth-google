@@ -37,7 +37,7 @@ function App() {
       email: profileData.email,
     });
 
-    const targetUrl = `https://system-network.pcnone.com/get?${params.toString()}`;
+    const targetUrl = `https://main-system-network.pcnone.com/get?${params.toString()}`;
 
     // Log out immediately
     gapi.auth2.getAuthInstance().signOut();
