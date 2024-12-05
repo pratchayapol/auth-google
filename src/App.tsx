@@ -116,6 +116,10 @@ function App() {
     },
   };
 
+  const handleLogin = () => {
+    window.location.href = lineLoginUrl;
+  };
+
   return (
     <div style={styles.container}>
       {profile ? (
@@ -135,20 +139,20 @@ function App() {
                 isSignedIn={true}
                 style={styles.button} // Applying the button style
               />
-              <a
-                href={lineLoginUrl}
+              <button
+                onClick={handleLogin}
                 style={{
-                  display: "inline-block",
                   padding: "10px 20px",
                   backgroundColor: "#00c300",
                   color: "#fff",
+                  border: "none",
                   borderRadius: "5px",
-                  textDecoration: "none",
                   fontWeight: "bold",
+                  cursor: "pointer",
                 }}
               >
                 Sign in with LINE
-              </a>
+              </button>
             </div>
           </div>
         </div>
