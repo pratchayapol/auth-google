@@ -130,6 +130,7 @@ function App() {
             <h2 style={styles.heading}>PCNONE NETWORK</h2>
             <p style={styles.paragraph}>โครงการเน็ตบ้านหลังละ 100</p>
             <div style={styles.buttonContainer}>
+           
               <GoogleLogin
                 clientId={clientId}
                 buttonText="Sign in with Google"
