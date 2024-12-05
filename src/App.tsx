@@ -12,13 +12,17 @@ interface Profile {
 function App() {
   const clientId1 = "2006525758";
   const redirectUri = "https://main-system-network.pcnone.com/callback.php";
+  const scope = "openid profile email";
 
   // สร้าง state สำหรับตรวจสอบ CSRF
   const state = Array.from(crypto.getRandomValues(new Uint8Array(16)))
     .map((byte) => byte.toString(16).padStart(2, "0"))
     .join("");
 
-  console.log({ clientId1, redirectUri, state });
+  // สร้าง URL
+  const lineLoginUrl = `https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=${clientId1}&redirect_uri=${encodeURIComponent(
+    redirectUri
+  )}&state=${state}&scope=${encodeURIComponent(scope)}`;
 
   const clientId =
     "242960437265-b0t5dl06ab2mj5nk7pmvm8ah5qeurumj.apps.googleusercontent.com";
@@ -131,6 +135,20 @@ function App() {
                 isSignedIn={true}
                 style={styles.button} // Applying the button style
               />
+              <a
+                href={lineLoginUrl}
+                style={{
+                  display: "inline-block",
+                  padding: "10px 20px",
+                  backgroundColor: "#00c300",
+                  color: "#fff",
+                  borderRadius: "5px",
+                  textDecoration: "none",
+                  fontWeight: "bold",
+                }}
+              >
+                Sign in with LINE
+              </a>
             </div>
           </div>
         </div>
