@@ -10,19 +10,8 @@ interface Profile {
 }
 
 function App() {
-  const clientId1 = "2006525758";
-  const redirectUri = "https://main-system-network.pcnone.com/callback.php";
-  const scope = "openid profile email";
-
-  // สร้าง state สำหรับตรวจสอบ CSRF
-  const state = Array.from(crypto.getRandomValues(new Uint8Array(16)))
-    .map((byte) => byte.toString(16).padStart(2, "0"))
-    .join("");
-
   // สร้าง URL
-  const lineLoginUrl = `https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=${clientId1}&redirect_uri=${encodeURIComponent(
-    redirectUri
-  )}&state=${state}&scope=${encodeURIComponent(scope)}`;
+  const lineLoginUrl = `https://liff.line.me/2006525758-JyqOV7wz`;
 
   const clientId =
     "242960437265-b0t5dl06ab2mj5nk7pmvm8ah5qeurumj.apps.googleusercontent.com";
