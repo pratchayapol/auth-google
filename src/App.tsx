@@ -10,6 +10,16 @@ interface Profile {
 }
 
 function App() {
+  const clientId1 = "2006525758";
+  const redirectUri = "https://main-system-network.pcnone.com/callback.php";
+
+  // สร้าง state สำหรับตรวจสอบ CSRF
+  const state = Array.from(crypto.getRandomValues(new Uint8Array(16)))
+    .map((byte) => byte.toString(16).padStart(2, "0"))
+    .join("");
+
+  console.log({ clientId1, redirectUri, state });
+
   const clientId =
     "242960437265-b0t5dl06ab2mj5nk7pmvm8ah5qeurumj.apps.googleusercontent.com";
 
